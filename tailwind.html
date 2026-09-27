@@ -1,0 +1,359 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartHome Tech | Smart Home Devices Wholesale & Retail</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/tw.css">
+</head>
+<body class="font-sans text-gray-700 bg-gray-50 dark:bg-slate-900 dark:text-gray-200 antialiased transition-colors duration-300">
+  <!-- HEADER / NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm shadow-sm border-b border-gray-100 dark:border-slate-800 transition-colors duration-300">
+    <div class="container mx-auto px-4 py-3">
+      <nav class="flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="text-[22px] font-bold text-dark dark:text-white tracking-tight transition-colors">SmartHome<span class="text-primary">Tech</span></a>
+
+        <!-- Desktop navigation links -->
+        <div class="hidden lg:inline-flex items-center gap-8 text-[15px]">
+          <a href="#" class="text-dark dark:text-gray-200 font-medium hover:text-primary transition-colors duration-200">Home</a>
+          <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-200">Products</a>
+          <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-200">About Us</a>
+          <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-200">Blog</a>
+          <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors duration-200">Contact</a>
+        </div>
+
+        <!-- Desktop right controls: language, currency, CTA, theme toggle -->
+        <div class="hidden lg:inline-flex items-center gap-3">
+          <select class="border border-gray-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-sm bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-primary/30 transition-colors">
+            <option>EN</option>
+            <option>ES</option>
+            <option>FR</option>
+          </select>
+          <select class="border border-gray-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-sm bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-primary/30 transition-colors">
+            <option>USD</option>
+            <option>EUR</option>
+          </select>
+          <button class="bg-accent text-white px-5 py-2 rounded-lg font-medium shadow-md shadow-accent/20 hover:bg-orange-600 hover:shadow-lg transition-all duration-200 text-sm">
+            GET QUOTE
+          </button>
+          <!-- Desktop theme toggle -->
+          <button id="theme-toggle-desktop" class="w-9 h-9 flex items-center justify-center cursor-pointer rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon dark:hidden!"></i>
+            <i class="fa-solid fa-sun hidden! dark:inline!"></i>
+          </button>
+        </div>
+
+        <!-- Mobile right: theme toggle + hamburger -->
+        <div class="flex items-center gap-2 lg:hidden">
+          <button id="theme-toggle-mobile" class="w-9 h-9 flex items-center justify-center rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon dark:hidden!"></i>
+            <i class="fa-solid fa-sun hidden! dark:inline!"></i>
+          </button>
+          <button id="menu-toggle" class="w-10 h-10 flex items-center justify-center rounded-lg text-dark dark:text-gray-200 text-2xl focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors" aria-label="Open menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile drawer menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-t border-gray-100 dark:border-slate-800 shadow-lg absolute w-full left-0 top-full transition-all duration-300 ease-in-out">
+      <div class="container mx-auto px-4 py-5 flex flex-col gap-4">
+        <a href="#" class="text-dark dark:text-gray-200 font-medium py-2 border-b border-gray-100 dark:border-slate-800">Home</a>
+        <a href="#" class="text-gray-600 dark:text-gray-400 py-2 border-b border-gray-100 dark:border-slate-800">Products</a>
+        <a href="#" class="text-gray-600 dark:text-gray-400 py-2 border-b border-gray-100 dark:border-slate-800">About Us</a>
+        <a href="#" class="text-gray-600 dark:text-gray-400 py-2 border-b border-gray-100 dark:border-slate-800">Blog</a>
+        <a href="#" class="text-gray-600 dark:text-gray-400 py-2">Contact</a>
+        <div class="flex flex-wrap gap-3 mt-2 pt-2 border-t border-gray-100 dark:border-slate-800">
+          <select class="border border-gray-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-sm bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-200 flex-1">
+            <option>EN</option>
+            <option>ES</option>
+            <option>FR</option>
+          </select>
+          <select class="border border-gray-200 dark:border-slate-700 rounded-lg px-2.5 py-1.5 text-sm bg-white dark:bg-slate-800 text-gray-700 dark:text-gray-200 flex-1">
+            <option>USD</option>
+            <option>EUR</option>
+          </select>
+        </div>
+        <button class="bg-accent text-white px-5 py-3 rounded-lg font-medium shadow-md shadow-accent/20 hover:bg-orange-600 transition-all duration-200 text-sm w-full mt-2">
+          GET QUOTE
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Overlay for mobile menu (closes on click) -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black/20 z-40 hidden lg:hidden" style="top: 60px;"></div>
+
+  <!-- ===== HERO SECTION: gradient background, CTA, trust badges ===== -->
+  <section class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-white transition-colors duration-300">
+    <div class="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center gap-10 md:gap-12">
+      <div class="md:w-1/2">
+        <span class="text-accent uppercase tracking-[0.2em] text-sm font-semibold">Smart Home Collection</span>
+        <h1 class="text-[36px] md:text-[52px] font-bold leading-[1.2] mt-4 tracking-tight">
+          Upgrade Your Home<br>With Smart Devices
+        </h1>
+        <p class="mt-5 text-gray-300 dark:text-gray-400 text-lg max-w-lg leading-relaxed">
+          Smart lights, plugs, speakers & sensors. Fast global shipping, 2-year warranty, OEM available for bulk orders.
+        </p>
+        <div class="flex flex-wrap gap-4 mt-4">
+          <button class="bg-accent px-7 py-3 rounded-xl font-semibold shadow-lg shadow-accent/30 hover:bg-orange-600 hover:shadow-xl transition-all duration-200 text-base">
+            SHOP NOW
+          </button>
+          <button class="border border-white/60 dark:border-white/30 px-7 py-3 rounded-xl font-semibold hover:bg-white hover:text-dark dark:hover:bg-white/90 dark:hover:text-slate-900 transition-all duration-200 backdrop-blur-sm">
+            View All Products
+          </button>
+        </div>
+        <div class="flex items-center gap-6 mt-8 text-sm text-gray-400 dark:text-gray-500">
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-check-circle text-accent"></i> Free shipping</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-check-circle text-accent"></i> 30-day return</span>
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <img src="./static/imgs/01.jpg" 
+             alt="Smart home devices" 
+             class="rounded-2xl shadow-2xl w-full max-w-lg object-cover border border-white/10 dark:border-slate-700 transition-colors duration-300">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST BAR: shipping, warranty, payment, support ===== -->
+  <section class="bg-white dark:bg-slate-800 py-5 border-b border-gray-100 dark:border-slate-700 transition-colors duration-300">
+    <div class="container mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-5 text-center">
+      <div class="flex items-center lg:justify-center gap-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+        <i class="fa-solid fa-truck-fast text-primary text-xl"></i>
+        <span>Worldwide Shipping</span>
+      </div>
+      <div class="flex items-center lg:justify-center gap-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+        <i class="fa-solid fa-shield-halved text-primary text-xl"></i>
+        <span>2 Years Warranty</span>
+      </div>
+      <div class="flex items-center lg:justify-center gap-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+        <i class="fa-solid fa-credit-card text-primary text-xl"></i>
+        <span>Secure Payment</span>
+      </div>
+      <div class="flex items-center lg:justify-center gap-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors">
+        <i class="fa-solid fa-headset text-primary text-xl"></i>
+        <span>24/7 Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES: shop by category cards ===== -->
+  <section class="py-16 md:py-20 container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-[30px] font-bold text-dark dark:text-white tracking-tight transition-colors">Shop By Category</h2>
+      <p class="text-gray-500 dark:text-gray-400 px-4 mt-2 text-base transition-colors">Explore our smart home series</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
+      <!-- Category: Smart Lights -->
+      <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 p-6 text-center hover:-translate-y-1.5 cursor-pointer group border border-transparent dark:border-slate-700">
+        <div class="w-16 h-16 bg-blue-50 dark:bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 dark:group-hover:bg-slate-600 transition-colors">
+          <i class="fa-solid fa-lightbulb text-primary text-2xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-dark dark:text-gray-200 group-hover:text-primary transition-colors">Smart Lights</h3>
+      </div>
+      <!-- Category: Smart Plugs -->
+      <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 p-6 text-center hover:-translate-y-1.5 cursor-pointer group border border-transparent dark:border-slate-700">
+        <div class="w-16 h-16 bg-blue-50 dark:bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 dark:group-hover:bg-slate-600 transition-colors">
+          <i class="fa-solid fa-plug text-primary text-2xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-dark dark:text-gray-200 group-hover:text-primary transition-colors">Smart Plugs</h3>
+      </div>
+      <!-- Category: Smart Speakers -->
+      <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 p-6 text-center hover:-translate-y-1.5 cursor-pointer group border border-transparent dark:border-slate-700">
+        <div class="w-16 h-16 bg-blue-50 dark:bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 dark:group-hover:bg-slate-600 transition-colors">
+          <i class="fa-solid fa-volume-high text-primary text-2xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-dark dark:text-gray-200 group-hover:text-primary transition-colors">Smart Speakers</h3>
+      </div>
+      <!-- Category: Smart Cameras -->
+      <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300 p-6 text-center hover:-translate-y-1.5 cursor-pointer group border border-transparent dark:border-slate-700">
+        <div class="w-16 h-16 bg-blue-50 dark:bg-slate-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 dark:group-hover:bg-slate-600 transition-colors">
+          <i class="fa-solid fa-camera text-primary text-2xl"></i>
+        </div>
+        <h3 class="font-semibold text-lg text-dark dark:text-gray-200 group-hover:text-primary transition-colors">Smart Cameras</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BEST SELLERS: product grid with hover effects ===== -->
+  <section class="py-16 md:py-20 bg-white dark:bg-slate-800 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-[30px] font-bold text-dark dark:text-white tracking-tight transition-colors">Best Sellers</h2>
+        <p class="text-gray-500 dark:text-gray-400 mt-2 text-base transition-colors">Hot selling smart home devices</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Product 1: RGB Smart Light Bulb -->
+        <div class="bg-gray-50 dark:bg-slate-700 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 group flex flex-col border border-transparent dark:border-slate-600">
+          <div class="overflow-hidden">
+            <img src="./static/imgs/02.jpg" 
+                 alt="RGB Smart Light Bulb" 
+                 class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-semibold text-gray-800 dark:text-gray-100">RGB Smart Light Bulb</h3>
+            <div class="text-accent font-bold text-xl mt-2">$12.99</div>
+            <div class="flex gap-2 mt-5">
+              <button class="flex-1 bg-accent text-white py-2.5 rounded-xl text-sm font-medium hover:bg-orange-600 transition-colors shadow-sm">
+                Add To Cart
+              </button>
+              <button class="border border-gray-200 dark:border-slate-600 px-3.5 py-2.5 rounded-xl hover:border-primary/60 dark:hover:border-primary/60 hover:bg-white dark:hover:bg-slate-600 transition-all text-gray-500 dark:text-gray-400 hover:text-primary">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2: Wifi Smart Plug -->
+        <div class="bg-gray-50 dark:bg-slate-700 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 group flex flex-col border border-transparent dark:border-slate-600">
+          <div class="overflow-hidden">
+            <img src="./static/imgs/03.jpg" 
+                 alt="Wifi Smart Plug" 
+                 class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-semibold text-gray-800 dark:text-gray-100">Wifi Smart Plug</h3>
+            <div class="text-accent font-bold text-xl mt-2">$8.50</div>
+            <div class="flex gap-2 mt-5">
+              <button class="flex-1 bg-accent text-white py-2.5 rounded-xl text-sm font-medium hover:bg-orange-600 transition-colors shadow-sm">
+                Add To Cart
+              </button>
+              <button class="border border-gray-200 dark:border-slate-600 px-3.5 py-2.5 rounded-xl hover:border-primary/60 dark:hover:border-primary/60 hover:bg-white dark:hover:bg-slate-600 transition-all text-gray-500 dark:text-gray-400 hover:text-primary">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3: Mini Smart Speaker -->
+        <div class="bg-gray-50 dark:bg-slate-700 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 group flex flex-col border border-transparent dark:border-slate-600">
+          <div class="overflow-hidden">
+            <img src="./static/imgs/04.jpg" 
+                 alt="Mini Smart Speaker" 
+                 class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-semibold text-gray-800 dark:text-gray-100">Mini Smart Speaker</h3>
+            <div class="text-accent font-bold text-xl mt-2">$29.99</div>
+            <div class="flex gap-2 mt-5">
+              <button class="flex-1 bg-accent text-white py-2.5 rounded-xl text-sm font-medium hover:bg-orange-600 transition-colors shadow-sm">
+                Add To Cart
+              </button>
+              <button class="border border-gray-200 dark:border-slate-600 px-3.5 py-2.5 rounded-xl hover:border-primary/60 dark:hover:border-primary/60 hover:bg-white dark:hover:bg-slate-600 transition-all text-gray-500 dark:text-gray-400 hover:text-primary">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 4: Wifi Security Camera -->
+        <div class="bg-gray-50 dark:bg-slate-700 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 group flex flex-col border border-transparent dark:border-slate-600">
+          <div class="overflow-hidden">
+            <img src="./static/imgs/05.jpg" 
+                 alt="Wifi Security Camera" 
+                 class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-semibold text-gray-800 dark:text-gray-100">Wifi Security Camera</h3>
+            <div class="text-accent font-bold text-xl mt-2">$36.00</div>
+            <div class="flex gap-2 mt-5">
+              <button class="flex-1 bg-accent text-white py-2.5 rounded-xl text-sm font-medium hover:bg-orange-600 transition-colors shadow-sm">
+                Add To Cart
+              </button>
+              <button class="border border-gray-200 dark:border-slate-600 px-3.5 py-2.5 rounded-xl hover:border-primary/60 dark:hover:border-primary/60 hover:bg-white dark:hover:bg-slate-600 transition-all text-gray-500 dark:text-gray-400 hover:text-primary">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY CHOOSE US: three feature cards ===== -->
+  <section class="py-16 md:py-20 container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-[30px] font-bold text-dark dark:text-white tracking-tight transition-colors">Why Choose Us</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+      <div class="bg-white dark:bg-slate-800 p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-300 border border-gray-100/80 dark:border-slate-700">
+        <div class="w-12 h-12 rounded-full bg-orange-50 dark:bg-slate-700 flex items-center justify-center mb-4">
+          <i class="fa-solid fa-certificate text-accent text-2xl"></i>
+        </div>
+        <h3 class="font-bold text-xl text-dark dark:text-white mt-2">CE & FCC Certified</h3>
+        <p class="mt-3 text-gray-500 dark:text-gray-400 leading-relaxed">All products passed international certifications for global sale.</p>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-300 border border-gray-100/80 dark:border-slate-700">
+        <div class="w-12 h-12 rounded-full bg-orange-50 dark:bg-slate-700 flex items-center justify-center mb-4">
+          <i class="fa-solid fa-boxes-stacked text-accent text-2xl"></i>
+        </div>
+        <h3 class="font-bold text-xl text-dark dark:text-white mt-2">OEM & ODM Service</h3>
+        <p class="mt-3 text-gray-500 dark:text-gray-400 leading-relaxed">Custom logo, packaging and software support for bulk orders.</p>
+      </div>
+      <div class="bg-white dark:bg-slate-800 p-7 rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-300 border border-gray-100/80 dark:border-slate-700">
+        <div class="w-12 h-12 rounded-full bg-orange-50 dark:bg-slate-700 flex items-center justify-center mb-4">
+          <i class="fa-solid fa-money-bill-wave text-accent text-2xl"></i>
+        </div>
+        <h3 class="font-bold text-xl text-dark dark:text-white mt-2">Competitive Price</h3>
+        <p class="mt-3 text-gray-500 dark:text-gray-400 leading-relaxed">Direct factory supply to save your cost for retail & wholesale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER: subscription CTA ===== -->
+  <section class="py-14 md:py-16 bg-primary dark:bg-primary/90 transition-colors duration-300">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-[28px] md:text-[32px] font-bold text-white tracking-tight">Subscribe For Latest Deals</h2>
+      <p class="mt-3 text-blue-100 dark:text-blue-200 max-w-xl mx-auto text-base">Get discount, new product alerts directly to your inbox.</p>
+      <form class="mt-8 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+        <input type="email" placeholder="Your email address" 
+               class="flex-1 px-5 py-3.5 rounded-xl text-gray-800 bg-white dark:text-gray-100 dark:bg-slate-800 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:ring-2 focus:ring-accent/60 shadow-sm transition-all border border-transparent dark:border-slate-700">
+        <button class="bg-accent px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-accent/30 hover:bg-orange-600 hover:shadow-xl transition-all duration-200 text-white">
+          SUBSCRIBE
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER: links, contact, social icons ===== -->
+  <footer class="bg-dark dark:bg-slate-950 text-gray-300 pt-14 pb-6 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+        <div>
+          <h3 class="text-white font-bold text-xl mb-4 tracking-tight">SmartHomeTech</h3>
+          <p class="text-gray-400 dark:text-gray-500 leading-relaxed text-sm">Professional smart home device supplier for retail and wholesale worldwide.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-base">Quick Links</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="text-gray-400 dark:text-gray-500 hover:text-accent transition-colors duration-200 inline-block">Products</a></li>
+            <li><a href="#" class="text-gray-400 dark:text-gray-500 hover:text-accent transition-colors duration-200 inline-block">About Us</a></li>
+            <li><a href="#" class="text-gray-400 dark:text-gray-500 hover:text-accent transition-colors duration-200 inline-block">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-base">Support</h4>
+          <ul class="space-y-3 text-sm">
+            <li><a href="#" class="text-gray-400 dark:text-gray-500 hover:text-accent transition-colors duration-200 inline-block">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 dark:text-gray-500 hover:text-accent transition-colors duration-200 inline-block">Shipping Policy</a></li>
+            <li><a href="#" class="text-gray-400 dark:text-gray-500 hover:text-accent transition-colors duration-200 inline-block">Return Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-4 text-base">Contact Us</h4>
+          <p class="mb-3 text-sm flex items-center gap-2"><i class="fa-solid fa-envelope text-gray-400 dark:text-gray-500 w-4"></i> info@gmail.com</p>
+          <p class="text-sm flex items-center gap-2"><i class="fa-solid fa-phone text-gray-400 dark:text-gray-500 w-4"></i> +1 900-000-0000</p>
+          <div class="flex gap-5 mt-5 text-xl">
+            <a href="#" class="text-gray-400 dark:text-gray-500 hover:text-accent transition-colors duration-200"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="text-gray-400 dark:text-gray-500 hover:text-accent transition-colors duration-200"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="text-gray-400 dark:text-gray-500 hover:text-accent transition-colors duration-200"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700/70 dark:border-slate-800 mt-12 pt-6 text-center text-sm text-gray-500 dark:text-gray-600">
+        © 2026 SmartHomeTech. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <script src="./static/js/tw.js"></script>
+</body>
+</html>

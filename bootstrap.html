@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartHome Tech | Smart Home Devices Wholesale & Retail</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="./static/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/bs.css">
+</head>
+
+<body class="bg-body-tertiary">
+
+  <!-- HEADER / NAVBAR -->
+  <header class="sticky-top bg-body border-bottom sticky-header">
+  <nav class="navbar navbar-expand-md container-fluid py-2 px-3">
+    <div class="container-fluid px-0">
+
+      <!-- Brand -->
+      <a class="navbar-brand fw-bold fs-4 text-body" href="#">
+        SmartHome<span class="text-primary-sh">Tech</span>
+      </a>
+
+      <!-- 移动端右侧控制：主题切换 + 汉堡按钮 -->
+      <div class="d-flex align-items-center gap-1 d-lg-none">
+        <button id="theme-toggle-mobile" class="btn btn-link text-secondary p-2 rounded-circle" aria-label="Toggle dark mode">
+          <i class="fa-solid fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+        <button id="menu-toggle" class="btn btn-link text-body p-2 fs-4" type="button"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- 桌面端导航：用 d-none d-md-flex 控制显示 -->
+      <div class="d-none d-lg-flex align-items-center w-100">
+        <ul class="navbar-nav mx-auto mb-2 mb-md-0 gap-md-4">
+          <li class="nav-item"><a class="nav-link nav-link-sh active text-body" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-sh text-secondary" href="#">Products</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-sh text-secondary" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-sh text-secondary" href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-sh text-secondary" href="#">Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2">
+          <select class="form-select form-select-sm" style="width: auto;" aria-label="Language">
+            <option>EN</option><option>ES</option><option>FR</option>
+          </select>
+          <select class="form-select form-select-sm" style="width: auto;" aria-label="Currency">
+            <option>USD</option><option>EUR</option>
+          </select>
+          <button class="btn btn-accent btn-sm fw-medium px-3">GET QUOTE</button>
+          <button id="theme-toggle-desktop" class="btn btn-link text-secondary p-2 rounded-circle" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon theme-icon-moon"></i>
+            <i class="fa-solid fa-sun theme-icon-sun"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+  <!-- MOBILE DRAWER + OVERLAY -->
+
+  <!-- Overlay (click to close) -->
+  <div id="menu-overlay" class="d-none"></div>
+
+  <!-- Drawer -->
+  <div id="mobileMenu" class="mobile-drawer bg-body d-none">
+    <div class="container py-4">
+      <ul class="nav flex-column gap-1">
+        <li class="nav-item"><a class="nav-link fw-medium text-body border-bottom py-3" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-secondary border-bottom py-3" href="#">Products</a></li>
+        <li class="nav-item"><a class="nav-link text-secondary border-bottom py-3" href="#">About Us</a></li>
+        <li class="nav-item"><a class="nav-link text-secondary border-bottom py-3" href="#">Blog</a></li>
+        <li class="nav-item"><a class="nav-link text-secondary py-3" href="#">Contact</a></li>
+      </ul>
+      <div class="d-flex gap-2 mt-3 pt-3 border-top">
+        <select class="form-select form-select-sm flex-fill" aria-label="Language">
+          <option>EN</option><option>ES</option><option>FR</option>
+        </select>
+        <select class="form-select form-select-sm flex-fill" aria-label="Currency">
+          <option>USD</option><option>EUR</option>
+        </select>
+      </div>
+      <button class="btn btn-accent w-100 mt-3 py-2 fw-medium">GET QUOTE</button>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero-gradient text-white">
+    <div class="container-fluid section-hero py-md-6">
+      <div class="row align-items-center g-12">
+        <div class="col-md-6">
+          <span class="section-eyebrow text-accent-sh">Smart Home Collection</span>
+          <h1 class="section-hreo-title display-4 fw-bold lh-base mt-3 mb-0">
+            Upgrade Your Home<br>With Smart Devices
+          </h1>
+          <p class="lead text-white-60 mt-4 mb-0" style="max-width: 32rem;">
+            Smart lights, plugs, speakers &amp; sensors. Fast global shipping, 2-year warranty, OEM available for bulk orders.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <button class="btn btn-accent px-4 py-2 fw-semibold rounded-3">SHOP NOW</button>
+            <button class="btn btn-outline-light-sh px-4 py-2 fw-semibold rounded-3">View All Products</button>
+          </div>
+          <div class="d-flex flex-wrap gap-4 mt-4 small text-white-50">
+            <span class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-check-circle text-accent-sh"></i> Free shipping
+            </span>
+            <span class="d-flex align-items-center gap-2">
+              <i class="fa-solid fa-check-circle text-accent-sh"></i> 30-day return
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <img src="./static/imgs/01.jpg"
+               alt="Smart home devices"
+               class="img-fluid rounded-4 shadow-lg border border-white border-opacity-10"
+               >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="bg-body border-bottom py-4">
+    <div class="container-fluid">
+      <div class="row row-cols-2 row-cols-md-4 g-3 text-center">
+        <div class="col">
+          <div class="d-flex align-items-center justify-content-center gap-2 small fw-medium trust-item">
+            <i class="fa-solid fa-truck-fast text-primary-sh fs-5"></i>
+            <span>Worldwide Shipping</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex align-items-center justify-content-center gap-2 small fw-medium trust-item">
+            <i class="fa-solid fa-shield-halved text-primary-sh fs-5"></i>
+            <span>2 Years Warranty</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex align-items-center justify-content-center gap-2 small fw-medium trust-item">
+            <i class="fa-solid fa-credit-card text-primary-sh fs-5"></i>
+            <span>Secure Payment</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="d-flex align-items-center justify-content-center gap-2 small fw-medium trust-item">
+            <i class="fa-solid fa-headset text-primary-sh fs-5"></i>
+            <span>24/7 Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP BY CATEGORY -->
+  <section class="py-5 py-md-6">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-body">Shop By Category</h2>
+        <p class="text-secondary mb-0">Explore our smart home series</p>
+      </div>
+      <div class="row row-cols-2 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card h-100 border-0 shadow-card card-hover category-card text-center p-4 rounded-4">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="icon-circle mb-3">
+                <i class="fa-solid fa-lightbulb text-primary-sh fs-3"></i>
+              </div>
+              <h3 class="h6 fw-semibold text-body mb-0">Smart Lights</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-card card-hover category-card text-center p-4 rounded-4">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="icon-circle mb-3">
+                <i class="fa-solid fa-plug text-primary-sh fs-3"></i>
+              </div>
+              <h3 class="h6 fw-semibold text-body mb-0">Smart Plugs</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-card card-hover category-card text-center p-4 rounded-4">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="icon-circle mb-3">
+                <i class="fa-solid fa-volume-high text-primary-sh fs-3"></i>
+              </div>
+              <h3 class="h6 fw-semibold text-body mb-0">Smart Speakers</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-card card-hover category-card text-center p-4 rounded-4">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="icon-circle mb-3">
+                <i class="fa-solid fa-camera text-primary-sh fs-3"></i>
+              </div>
+              <h3 class="h6 fw-semibold text-body mb-0">Smart Cameras</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEST SELLERS -->
+  <section class="py-5 py-md-6 bg-body">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-body">Best Sellers</h2>
+        <p class="text-secondary mb-0">Hot selling smart home devices</p>
+      </div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
+        <div class="col">
+          <div class="card h-100 border-0 shadow-card card-hover product-card rounded-4 overflow-hidden">
+            <div class="product-img-wrapper">
+              <img src="./static/imgs/02.jpg" alt="RGB Smart Light Bulb" class="card-img-top" style="height: 13rem; object-fit: cover;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h6 fw-semibold text-body mb-0">RGB Smart Light Bulb</h3>
+              <div class="text-accent-sh fw-bold fs-5 mt-2">$12.99</div>
+              <div class="d-flex gap-2 mt-3">
+                <button class="btn btn-accent flex-fill py-2 rounded-3 fw-medium small">Add To Cart</button>
+                <button class="btn btn-outline-secondary wishlist-btn" aria-label="Add to wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 border-0 shadow-card card-hover product-card rounded-4 overflow-hidden">
+            <div class="product-img-wrapper">
+              <img src="./static/imgs/03.jpg" alt="Wifi Smart Plug" class="card-img-top" style="height: 13rem; object-fit: cover;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h6 fw-semibold text-body mb-0">Wifi Smart Plug</h3>
+              <div class="text-accent-sh fw-bold fs-5 mt-2">$8.50</div>
+              <div class="d-flex gap-2 mt-3">
+                <button class="btn btn-accent flex-fill py-2 rounded-3 fw-medium small">Add To Cart</button>
+                <button class="btn btn-outline-secondary wishlist-btn" aria-label="Add to wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 border-0 shadow-card card-hover product-card rounded-4 overflow-hidden">
+            <div class="product-img-wrapper">
+              <img src="./static/imgs/04.jpg" alt="Mini Smart Speaker" class="card-img-top" style="height: 13rem; object-fit: cover;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h6 fw-semibold text-body mb-0">Mini Smart Speaker</h3>
+              <div class="text-accent-sh fw-bold fs-5 mt-2">$29.99</div>
+              <div class="d-flex gap-2 mt-3">
+                <button class="btn btn-accent flex-fill py-2 rounded-3 fw-medium small">Add To Cart</button>
+                <button class="btn btn-outline-secondary wishlist-btn" aria-label="Add to wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 border-0 shadow-card card-hover product-card rounded-4 overflow-hidden">
+            <div class="product-img-wrapper">
+              <img src="./static/imgs/05.jpg" alt="Wifi Security Camera" class="card-img-top" style="height: 13rem; object-fit: cover;">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h3 class="h6 fw-semibold text-body mb-0">Wifi Security Camera</h3>
+              <div class="text-accent-sh fw-bold fs-5 mt-2">$36.00</div>
+              <div class="d-flex gap-2 mt-3">
+                <button class="btn btn-accent flex-fill py-2 rounded-3 fw-medium small">Add To Cart</button>
+                <button class="btn btn-outline-secondary wishlist-btn" aria-label="Add to wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="py-5 py-md-6">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold text-body">Why Choose Us</h2>
+      </div>
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-card card-hover rounded-4 p-4">
+            <div class="card-body">
+              <div class="feature-icon mb-3">
+                <i class="fa-solid fa-certificate text-accent-sh fs-4"></i>
+              </div>
+              <h3 class="h5 fw-bold text-body">CE &amp; FCC Certified</h3>
+              <p class="text-secondary mb-0">All products passed international certifications for global sale.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-card card-hover rounded-4 p-4">
+            <div class="card-body">
+              <div class="feature-icon mb-3">
+                <i class="fa-solid fa-boxes-stacked text-accent-sh fs-4"></i>
+              </div>
+              <h3 class="h5 fw-bold text-body">OEM &amp; ODM Service</h3>
+              <p class="text-secondary mb-0">Custom logo, packaging and software support for bulk orders.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-card card-hover rounded-4 p-4">
+            <div class="card-body">
+              <div class="feature-icon mb-3">
+                <i class="fa-solid fa-money-bill-wave text-accent-sh fs-4"></i>
+              </div>
+              <h3 class="h5 fw-bold text-body">Competitive Price</h3>
+              <p class="text-secondary mb-0">Direct factory supply to save your cost for retail &amp; wholesale.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="py-5 bg-primary-sh">
+    <div class="container text-center">
+      <h2 class="fw-bold text-white mb-0">Subscribe For Latest Deals</h2>
+      <p class="text-white-50 mt-3 mb-0 mx-auto" style="max-width: 32rem;">
+        Get discount, new product alerts directly to your inbox.
+      </p>
+      <form class="mt-4 d-flex flex-column flex-sm-row gap-3 mx-auto" style="max-width: 32rem;">
+        <input type="email" placeholder="Your email address"
+               class="form-control form-control-lg newsletter-input flex-fill"
+               aria-label="Email address" required>
+        <button class="btn btn-accent btn-lg fw-semibold px-4" type="submit">SUBSCRIBE</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark-sh text-light pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-md-3">
+          <h3 class="h5 fw-bold text-white mb-3">SmartHomeTech</h3>
+          <p class="text-secondary small mb-0">
+            Professional smart home device supplier for retail and wholesale worldwide.
+          </p>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="h6 fw-semibold text-white mb-3">Quick Links</h4>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="footer-link small">Products</a></li>
+            <li class="mb-2"><a href="#" class="footer-link small">About Us</a></li>
+            <li class="mb-2"><a href="#" class="footer-link small">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="h6 fw-semibold text-white mb-3">Support</h4>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="#" class="footer-link small">FAQ</a></li>
+            <li class="mb-2"><a href="#" class="footer-link small">Shipping Policy</a></li>
+            <li class="mb-2"><a href="#" class="footer-link small">Return Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h4 class="h6 fw-semibold text-white mb-3">Contact Us</h4>
+          <p class="small mb-2 d-flex align-items-center gap-2">
+            <i class="fa-solid fa-envelope text-secondary"></i> info@gmail.com
+          </p>
+          <p class="small mb-3 d-flex align-items-center gap-2">
+            <i class="fa-solid fa-phone text-secondary"></i> +1 19 0000 0000
+          </p>
+          <div class="d-flex gap-3 fs-5">
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary mt-4">
+      <p class="text-center text-secondary small mb-0">
+        © 2026 SmartHomeTech. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="./static/js/bootstrap.bundle.min.js"></script>
+  <script src="./static/js/bs.js"></script>
+</body>
+</html>

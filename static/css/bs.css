@@ -1,0 +1,300 @@
+/* ===== CSS Custom Properties (Design Tokens) ===== */
+:root {
+    --sh-primary: #2563eb;
+    --sh-primary-rgb: 37, 99, 235;
+    --sh-accent: #f97316;
+    --sh-accent-rgb: 249, 115, 22;
+    --sh-dark: #1e293b;
+    --sh-radius: 1rem;
+    --sh-radius-lg: 1.25rem;
+    --sh-shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --sh-shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+    /* Header height is set dynamically by JS; fallback to 60px */
+    --sh-header-height: 60px;
+}
+
+[data-bs-theme="dark"] {
+    --sh-shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --sh-shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== Base Reset / Horizontal Overflow Guard ===== */
+html, body {
+    overflow-x: hidden; /* Guard against accidental horizontal overflow */
+    max-width: 100%;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ===== Utility Overrides ===== */
+.bg-primary-sh { background-color: var(--sh-primary) !important; }
+.bg-accent-sh { background-color: var(--sh-accent) !important; }
+.bg-dark-sh { background-color: var(--sh-dark) !important; }
+.text-primary-sh { color: var(--sh-primary) !important; }
+.text-accent-sh { color: var(--sh-accent) !important; }
+
+.btn-accent {
+    --bs-btn-bg: var(--sh-accent);
+    --bs-btn-border-color: var(--sh-accent);
+    --bs-btn-hover-bg: #ea580c;
+    --bs-btn-hover-border-color: #ea580c;
+    --bs-btn-active-bg: #ea580c;
+    --bs-btn-active-border-color: #ea580c;
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-color: #fff;
+    --bs-btn-focus-shadow-rgb: var(--sh-accent-rgb);
+    box-shadow: 0 4px 12px rgba(var(--sh-accent-rgb), 0.3);
+}
+.btn-accent:hover {
+    box-shadow: 0 6px 18px rgba(var(--sh-accent-rgb), 0.45);
+    transform: translateY(-1px);
+}
+
+.btn-outline-light-sh {
+    --bs-btn-color: #fff;
+    --bs-btn-border-color: rgba(255, 255, 255, 0.6);
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-hover-color: var(--sh-dark);
+    --bs-btn-active-bg: #fff;
+    --bs-btn-active-color: var(--sh-dark);
+    backdrop-filter: blur(6px);
+}
+
+/* ===== Card Shadows ===== */
+.shadow-card { box-shadow: var(--sh-shadow-card); }
+.shadow-card-hover { box-shadow: var(--sh-shadow-card-hover); }
+
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--sh-shadow-card-hover);
+}
+
+/* ===== Category Icon Circle ===== */
+.icon-circle {
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    background-color: rgba(var(--sh-primary-rgb), 0.08);
+}
+[data-bs-theme="dark"] .icon-circle {
+    background-color: rgba(var(--sh-primary-rgb), 0.15);
+}
+.category-card:hover .icon-circle {
+    background-color: rgba(var(--sh-primary-rgb), 0.18);
+}
+[data-bs-theme="dark"] .category-card:hover .icon-circle {
+    background-color: rgba(var(--sh-primary-rgb), 0.28);
+}
+
+/* ===== Product Card Image Zoom ===== */
+.product-img-wrapper {
+    overflow: hidden;
+}
+.product-img-wrapper img {
+    transition: transform 0.5s ease;
+}
+.product-card:hover .product-img-wrapper img {
+    transform: scale(1.06);
+}
+
+/* ===== Wishlist Button ===== */
+.wishlist-btn {
+    width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    transition: all 0.2s ease;
+}
+.wishlist-btn:hover {
+    border-color: rgba(var(--sh-primary-rgb), 0.6) !important;
+    color: var(--sh-primary) !important;
+    background-color: var(--bs-body-bg);
+}
+
+/* ===== Hero Section ===== */
+.hero-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+}
+[data-bs-theme="dark"] .hero-gradient {
+    background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #020617 100%);
+}
+
+/* ===== Feature Icon Circle ===== */
+.feature-icon {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(var(--sh-accent-rgb), 0.1);
+}
+
+/* ===== Sticky Header ===== */
+.sticky-header {
+    backdrop-filter: blur(12px);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ===== Mobile Drawer =====
+    Fixed-position drawer anchored right below the sticky header.
+    Lives OUTSIDE the header to avoid stacking-context clipping. */
+.mobile-drawer {
+    position: fixed;
+    top: var(--sh-header-height);
+    left: 0;
+    right: 0;
+    z-index: 1040;
+    max-height: calc(100vh - var(--sh-header-height));
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-top: 1px solid var(--bs-border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: slideDown 0.25s ease;
+}
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Overlay sits between page content and the drawer */
+#menu-overlay {
+    position: fixed;
+    inset: 0;
+    top: var(--sh-header-height);
+    z-index: 1029;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Hard-hide drawer & overlay on md+ screens (768px+) */
+@media (min-width: 992px) {
+    .mobile-drawer,
+    #menu-overlay {
+    display: none !important;
+    }
+}
+
+/* ===== Scroll lock when drawer is open =====
+    Lock BOTH html and body. In standards mode the scroll
+    container is <html>, so locking only <body> is not enough.
+    No padding compensation → no horizontal scrollbar. */
+html.sh-menu-open,
+body.sh-menu-open {
+    overflow: hidden !important;
+}
+
+/* ===== Smooth Scroll ===== */
+html { scroll-behavior: smooth; }
+
+.container-fluid {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.section-hero {
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+
+.section-hreo-title {
+    font-size: 3rem;
+}
+
+/* ===== Section Title Accent ===== */
+.section-eyebrow {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+/* ===== Newsletter Input ===== */
+.newsletter-input {
+    border: 1px solid transparent;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.newsletter-input:focus {
+    box-shadow: 0 0 0 3px rgba(var(--sh-accent-rgb), 0.45);
+    border-color: var(--sh-accent);
+}
+
+/* ===== Footer Link Hover ===== */
+.footer-link {
+    color: #94a3b8;
+    transition: color 0.2s ease;
+    text-decoration: none;
+}
+.footer-link:hover {
+    color: var(--sh-accent);
+}
+
+/* ===== Social Icon Hover ===== */
+.social-icon {
+    color: #94a3b8;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.social-icon:hover {
+    color: var(--sh-accent);
+    transform: translateY(-2px);
+}
+
+/* ===== Trust Bar Item ===== */
+.trust-item {
+    transition: color 0.2s ease;
+}
+.trust-item:hover {
+    color: var(--sh-primary);
+}
+
+/* ===== Nav Link Underline Effect ===== */
+.navbar {
+    margin-left: 0;
+    margin-right: 0;
+}
+.nav-link-sh {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+.nav-link-sh::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--sh-primary);
+    transition: width 0.25s ease;
+}
+.nav-link-sh:hover::after,
+.nav-link-sh.active::after {
+    width: 100%;
+}
+
+/* ===== Theme Toggle Icon Visibility ===== */
+.theme-icon-sun { display: none; }
+.theme-icon-moon { display: inline-block; }
+
+[data-bs-theme="dark"] .theme-icon-sun { display: inline-block; }
+[data-bs-theme="dark"] .theme-icon-moon { display: none; }
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    }
+}
